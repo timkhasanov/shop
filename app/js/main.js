@@ -1,0 +1,1 @@
+;(function($) {	'use strict';	var app = {		init: function () {			app.setUpListeners();			app.initModules();		},		initModules: function (){		},		setUpListeners: function () {		}	};	app.init();})(jQuery);

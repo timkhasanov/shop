@@ -1,0 +1,13 @@
+{
+  "name": "shop",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower"
+  ],
+  "dependencies": {
+    "jquery": "1.11.2",
+    "normalize.css": "~3.0.3"
+  }
+}
