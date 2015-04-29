@@ -3,28 +3,28 @@
 @font-face {
   font-family: 'elektra_light_proregular';
   src: url('../fonts/elektra_light_pro-webfont.eot');
-  src: url('../fonts/elektra_light_pro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/elektra_light_pro-webfont.woff') format('woff'), url('../fonts/elektra_light_pro-webfont.ttf') format('truetype'), url('../fonts/elektra_light_pro-webfont.svg#elektra_light_proregular') format('svg');
+  src: url('../fonts/elektra_light_pro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/elektra_light_pro-webfont.woff2') format('woff2'), url('../fonts/elektra_light_pro-webfont.woff') format('woff'), url('../fonts/elektra_light_pro-webfont.ttf') format('truetype'), url('../fonts/elektra_light_pro-webfont.svg#elektra_light_proregular') format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'elektra_light_probold';
   src: url('../fonts/font-webfont.eot');
-  src: url('../fonts/font-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/font-webfont.woff') format('woff'), url('../fonts/font-webfont.ttf') format('truetype'), url('../fonts/font-webfont.svg#elektra_light_probold') format('svg');
+  src: url('../fonts/font-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/font-webfont.woff2') format('woff2'), url('../fonts/font-webfont.woff') format('woff'), url('../fonts/font-webfont.ttf') format('truetype'), url('../fonts/font-webfont.svg#elektra_light_probold') format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'elektra_medium_proitalic';
   src: url('../fonts/elektra_medium_pro_italic-webfont.eot');
-  src: url('../fonts/elektra_medium_pro_italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/elektra_medium_pro_italic-webfont.woff') format('woff'), url('../fonts/elektra_medium_pro_italic-webfont.ttf') format('truetype'), url('../fonts/elektra_medium_pro_italic-webfont.svg#elektra_medium_proitalic') format('svg');
+  src: url('../fonts/elektra_medium_pro_italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/elektra_medium_pro_italic-webfont.woff2') format('woff2'), url('../fonts/elektra_medium_pro_italic-webfont.woff') format('woff'), url('../fonts/elektra_medium_pro_italic-webfont.ttf') format('truetype'), url('../fonts/elektra_medium_pro_italic-webfont.svg#elektra_medium_proitalic') format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'elektra_medium_proregular';
   src: url('../fonts/elektra_medium_pro-webfont.eot');
-  src: url('../fonts/elektra_medium_pro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/elektra_medium_pro-webfont.woff') format('woff'), url('../fonts/elektra_medium_pro-webfont.ttf') format('truetype'), url('../fonts/elektra_medium_pro-webfont.svg#elektra_medium_proregular') format('svg');
+  src: url('../fonts/elektra_medium_pro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/elektra_medium_pro-webfont.woff2') format('woff2'), url('../fonts/elektra_medium_pro-webfont.woff') format('woff'), url('../fonts/elektra_medium_pro-webfont.ttf') format('truetype'), url('../fonts/elektra_medium_pro-webfont.svg#elektra_medium_proregular') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -103,13 +103,13 @@ img {
   background: #613993 url('../img/bg/footer-bg.png') repeat;
   z-index: 120; }
   .footer__logo {
-    margin-top: 43px; }
+    margin-top: 42px; }
   .footer__sitemap {
     float: left;
     width: 510px; }
     .footer__sitemap-col {
       float: left;
-      width: 160px; }
+      width: 161px; }
   .footer__socials {
     float: right;
     width: 185px;
@@ -118,13 +118,11 @@ img {
 
 /* footer: links */
 .footer-links-title {
-  font: 0.9375em/1.6666 'elektra_light_probold';
+  font: 15px/25px 'elektra_light_probold';
   color: #fff;
-  margin-bottom: 2px; }
-.footer-links__item {
   margin-bottom: 1px; }
 .footer-links__link {
-  font: 0.9375em/1.6666 'elektra_light_proregular';
+  font: 15px/25px 'elektra_light_proregular';
   color: #fff;
   text-decoration: underline; }
   .footer-links__link:hover {
@@ -197,7 +195,7 @@ img {
 
 /* form: title */
 .form__title {
-  font: 1.5625em/1 'elektra_medium_proregular';
+  font: 25px/1 'elektra_medium_proregular';
   color: #5c7b98;
   margin-bottom: 20px; }
 
@@ -212,10 +210,10 @@ img {
     vertical-align: middle; }
   .form-line__label {
     padding-right: 7px;
-    min-width: 75px;
+    min-width: 77px;
     max-width: 90px; }
   .form-line__label-text {
-    font: 0.875em/1 'elektra_light_proregular';
+    font: 14px/1 'elektra_light_proregular';
     color: #5c7b98; }
   .form-line__field {
     line-height: 0; }
@@ -224,31 +222,31 @@ img {
 
 /* form: controls */
 .form-control, .form-input, .form-textarea {
-  font: 0.75em 'elektra_light_proregular';
+  font: 12px 'elektra_light_proregular';
   color: #5c7b98;
   padding: 4px 7px;
   width: 100%;
   border: 1px solid #dae1eb; }
   .form-control::-webkit-input-placeholder, .form-input::-webkit-input-placeholder, .form-textarea::-webkit-input-placeholder {
-    font: 0.857em 'elektra_light_proregular';
+    font: 12px 'elektra_light_proregular';
     color: #dae1eb;
     opacity: 1;
     transition: opacity 0.3s ease;
     text-overflow: ellipsis; }
   .form-control::-moz-placeholder, .form-input::-moz-placeholder, .form-textarea::-moz-placeholder {
-    font: 0.857em 'elektra_light_proregular';
+    font: 12px 'elektra_light_proregular';
     color: #dae1eb;
     opacity: 1;
     transition: opacity 0.3s ease;
     text-overflow: ellipsis; }
   .form-control:-ms-input-placeholder, .form-input:-ms-input-placeholder, .form-textarea:-ms-input-placeholder {
-    font: 0.857em 'elektra_light_proregular';
+    font: 12px 'elektra_light_proregular';
     color: #dae1eb;
     opacity: 1;
     transition: opacity 0.3s ease;
     text-overflow: ellipsis; }
   .form-control::placeholder, .form-input::placeholder, .form-textarea::placeholder {
-    font: 0.857em 'elektra_light_proregular';
+    font: 12px 'elektra_light_proregular';
     color: #dae1eb;
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -279,25 +277,29 @@ img {
   position: relative;
   width: 51px;
   display: inline-block;
-  vertical-align: top; }
+  vertical-align: top;
+  background: #fff; }
   .custom-select + .custom-select {
     margin-left: 5px; }
-  .custom-select:after {
+  .custom-select:before {
     content: '';
     position: absolute;
     right: 0;
     top: 1px;
-    bottom: 1px;
+    height: 24px;
     width: 26px;
-    background: #00b9fe url('../img/icon/select-arrow.jpg') no-repeat 50% 50%;
+    background-color: #00b9fe;
+    background-image: url('../img/icon/select-arrow.jpg');
+    background-repeat: no-repeat;
     cursor: pointer; }
   .custom-select__control {
     color: #dae1eb;
-    padding-right: 26px;
-    cursor: pointer; }
+    padding: 5px 26px 4px 5px;
+    cursor: pointer;
+    text-align: left; }
   .custom-select__list {
     display: none;
-    font: 0.75em/1 'elektra_light_proregular';
+    font: 12px/1 'elektra_light_proregular';
     padding: 4px 0;
     text-align: left;
     background: #fff;
@@ -315,15 +317,20 @@ img {
 
 /* = Form buttons================================================*/
 .btn {
-  font: 0.9375em 'elektra_light_probold';
+  font: 15px 'elektra_light_probold';
   color: #fff;
   padding: 8px 5px;
   min-width: 90px;
   text-align: center;
   background: #00b9fe;
-  border: none; }
+  border: none;
+  transition: background .3s ease; }
+  .btn:hover {
+    background: #009fda; }
   .btn_neg {
     background: #dae1eb; }
+    .btn_neg:hover {
+      background: #c3cede; }
 
 .btn_to_left {
   float: left; }
@@ -346,7 +353,7 @@ img {
   .contacts-list__item + .contacts-list__item {
     margin-top: 10px; }
   .contacts-list__link {
-    font: 0.875em/1.4285 'elektra_light_proregular';
+    font: 14px/20px 'elektra_light_proregular';
     color: #5c7b98;
     text-decoration: none; }
 
@@ -380,7 +387,7 @@ img {
     .slider__item:first-child {
       display: block; }
     .slider__item-tip {
-      font: 0.875em/1.4 'elektra_light_proregular';
+      font: 14px/23px 'elektra_light_proregular';
       position: absolute;
       bottom: 0;
       left: 0;
@@ -388,10 +395,9 @@ img {
       padding: 15px 23px;
       background: rgba(0, 0, 0, 0.55); }
       .slider__item-tip__title {
-        font-size: 1.2857em;
+        font-size: 18px;
         color: #00b9fe;
         text-decoration: underline;
-        margin-bottom: 1px;
         display: inline-block; }
         .slider__item-tip__title:hover {
           text-decoration: none; }
@@ -402,14 +408,15 @@ img {
 
 /* slider: btns */
 .slider__btn {
-  font: 1.0625em/18px 'elektra_light_probold';
+  font: 17px/18px 'elektra_light_probold';
   color: #5c7b98;
   background: #fff;
   display: inline-block;
   padding: 8px;
   position: absolute;
   top: 103px;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: all .3s linear; }
   .slider__btn:before {
     top: 50%;
     border: solid transparent;
@@ -419,7 +426,8 @@ img {
     position: absolute;
     pointer-events: none;
     border-width: 17px 7px;
-    margin-top: -17px; }
+    margin-top: -17px;
+    transition: all .3s linear; }
   .slider__btn_prev {
     left: 20px; }
     .slider__btn_prev:before {
@@ -447,7 +455,7 @@ img {
 /* = Products================================================*/
 /* products: section */
 .products-section {
-  font: 1.5625em/1 'elektra_medium_proregular';
+  font: 25px/1 'elektra_medium_proregular';
   text-align: center;
   color: #5c7b98;
   overflow: hidden;
@@ -472,15 +480,19 @@ img {
 
 /* products: list */
 .products-list {
-  display: table;
+  font-size: 0;
   margin-bottom: 40px; }
   .products-list__item {
+    font-size: 16px;
     display: inline-block;
     vertical-align: top;
     width: 230px;
     margin-right: 25px;
     border: 1px solid #dce2ec;
-    padding: 10px 6px 11px; }
+    padding: 10px 6px 11px;
+    transition: all .5s ease; }
+    .products-list__item:hover {
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15); }
     .products-list__item:nth-child(3n) {
       margin-right: 0; }
 
@@ -493,29 +505,30 @@ img {
     display: table-cell;
     vertical-align: middle; }
   .products-headline__title {
-    padding-top: 10px; }
+    padding-top: 5px; }
   .products-headline__thumb {
     width: 93px;
     padding-right: 10px; }
   .products-headline__link {
-    font: 0.9375em/1.333 'elektra_light_proregular';
+    font: 15px/20px 'elektra_light_proregular';
     color: #00b9fe;
-    text-decoration: underline; }
+    text-decoration: underline;
+    transition: all .7s ease; }
     .products-headline__link:hover {
       color: #613993; }
 
 /* products: list: table */
 .products-tbl {
-  padding: 0 10px; }
+  padding: 0 10px;
+  cursor: default; }
 
 .products-line {
   display: table;
-  width: 100%;
-  margin-bottom: 1px; }
+  width: 100%; }
   .products-line__label, .products-line__value {
     display: table-cell;
     vertical-align: middle;
-    font: 0.875em/1.42 'elektra_light_proregular';
+    font: 14px/20px 'elektra_light_proregular';
     color: #5c7b98; }
   .products-line__label {
     width: 100px; }
