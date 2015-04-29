@@ -100,8 +100,7 @@ img {
   margin-top: -238px;
   padding-top: 57px;
   overflow: hidden;
-  background: #613993 url('../img/bg/footer-bg.png') repeat;
-  z-index: 120; }
+  background: #613993 url('../img/bg/footer-bg.png') repeat; }
   .footer__logo {
     margin-top: 42px; }
   .footer__sitemap {
@@ -163,11 +162,13 @@ img {
   background: #00b9fe;
   text-decoration: none;
   position: fixed;
+  display: inline-block;
   right: 10px;
   bottom: 10px;
-  display: inline-block;
-  z-index: 100;
-  padding: 9px 11px; }
+  padding: 9px 11px;
+  z-index: 100; }
+  .to-top-btn_sticky {
+    bottom: 243px; }
   .to-top-btn:before, .to-top-btn:after {
     left: 50%;
     border: solid transparent;
