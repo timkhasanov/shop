@@ -29,7 +29,7 @@
   font-style: normal; }
 
 /* = Extends, Mixins================================================*/
-.list-reset, .footer-links, .social-btns, .social-list, .custom-select__list, .gallery-list, .contacts-list, .products-list {
+.list-reset, .footer-links, .social-btns, .social-list, .custom-select__list, .gallery-list, .contacts-list, .slider-list, .products-list {
   list-style-type: none;
   margin: 0;
   padding: 0; }
@@ -162,11 +162,11 @@ img {
   background: #00b9fe;
   text-decoration: none;
   position: fixed;
-  display: inline-block;
   right: 10px;
   bottom: 10px;
   padding: 9px 11px;
-  z-index: 100; }
+  z-index: 100;
+  display: none; }
   .to-top-btn_sticky {
     bottom: 243px; }
   .to-top-btn:before, .to-top-btn:after {
@@ -382,12 +382,16 @@ img {
   position: relative;
   overflow: hidden;
   margin-bottom: 40px; }
-  .slider__item {
+  .slider-list {
+    white-space: nowrap;
     position: relative;
-    display: none; }
-    .slider__item:first-child {
-      display: block; }
-    .slider__item-tip {
+    width: 3000px; }
+    .slider-list__item {
+      position: relative;
+      float: left; }
+      .slider-list__item-img {
+        display: block; }
+    .slider-list__tip {
       font: 14px/23px 'elektra_light_proregular';
       position: absolute;
       bottom: 0;
@@ -395,17 +399,15 @@ img {
       right: 0;
       padding: 15px 23px;
       background: rgba(0, 0, 0, 0.55); }
-      .slider__item-tip__title {
+      .slider-list__tip-title {
         font-size: 18px;
         color: #00b9fe;
         text-decoration: underline;
         display: inline-block; }
-        .slider__item-tip__title:hover {
+        .slider-list__tip-title:hover {
           text-decoration: none; }
-      .slider__item-tip__content {
+      .slider-list__tip-content {
         color: #fff; }
-    .slider__item-img {
-      display: block; }
 
 /* slider: btns */
 .slider__btn {
@@ -449,7 +451,7 @@ img {
 
 /* = Fixes for old browsers================================================*/
 /* rgba */
-.no-rgba .slider__item-tip {
+.no-rgba .slider-list__tip {
   background: #000;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=55)"; }
 
