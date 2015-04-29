@@ -1,8 +1,16 @@
-/* = Fonts================================================*/
+/* = Constructor================================================*/
+/* = Font================================================*/
 @font-face {
   font-family: 'elektra_light_proregular';
   src: url('../fonts/elektra_light_pro-webfont.eot');
   src: url('../fonts/elektra_light_pro-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/elektra_light_pro-webfont.woff') format('woff'), url('../fonts/elektra_light_pro-webfont.ttf') format('truetype'), url('../fonts/elektra_light_pro-webfont.svg#elektra_light_proregular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'elektra_light_probold';
+  src: url('../fonts/font-webfont.eot');
+  src: url('../fonts/font-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/font-webfont.woff') format('woff'), url('../fonts/font-webfont.ttf') format('truetype'), url('../fonts/font-webfont.svg#elektra_light_probold') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -20,19 +28,494 @@
   font-weight: normal;
   font-style: normal; }
 
-@font-face {
-  font-family: 'elektra_light_probold';
-  src: url('../fonts/font-webfont.eot');
-  src: url('../fonts/font-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/font-webfont.woff') format('woff'), url('../fonts/font-webfont.ttf') format('truetype'), url('../fonts/font-webfont.svg#elektra_light_probold') format('svg');
-  font-weight: normal;
-  font-style: normal; }
+/* = Extends, Mixins================================================*/
+.list-reset, .footer-links, .social-btns, .social-list, .custom-select__list, .gallery-list, .contacts-list, .products-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
 
-/* = Main================================================*/
-/* = Variables, Media, Extends, Mixins================================================*/
-/* fonts */
-/* = Icons================================================*/
-/* = Variables, Media, Extends, Mixins================================================*/
-/* fonts */
-/* = Forms================================================*/
-/* = Variables, Media, Extends, Mixins================================================*/
-/* fonts */
+.clearfix:before, .container:before, .btn-container:before, .clearfix:after, .container:after, .btn-container:after {
+  content: "";
+  display: table; }
+
+.clearfix:after, .container:after, .btn-container:after {
+  clear: both; }
+
+/* = General================================================*/
+* {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+body {
+  font: 1em/1.4 'elektra_light_proregular';
+  color: #5c7b98;
+  background: #fff;
+  min-width: 1020px; }
+
+:focus {
+  outline: none; }
+
+img {
+  max-width: 100%; }
+
+/* = Layout================================================*/
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  min-width: 1020px;
+  height: auto !important; }
+  .wrapper:after {
+    content: '';
+    height: 238px;
+    display: block; }
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  box-sizing: content-box; }
+  .container__left {
+    float: left;
+    width: 230px; }
+  .container__right {
+    float: right;
+    width: 740px; }
+
+/* = Left column================================================*/
+.logo {
+  margin-bottom: 18px; }
+  .logo__text {
+    display: none; }
+
+/* = Right column================================================*/
+.main-content {
+  padding: 38px 0 30px;
+  position: relative; }
+
+/* = Footer================================================*/
+.footer {
+  position: relative;
+  height: 238px;
+  margin-top: -238px;
+  padding-top: 57px;
+  overflow: hidden;
+  background: #613993 url('../img/bg/footer-bg.png') repeat;
+  z-index: 120; }
+  .footer__logo {
+    margin-top: 43px; }
+  .footer__sitemap {
+    float: left;
+    width: 510px; }
+    .footer__sitemap-col {
+      float: left;
+      width: 160px; }
+  .footer__socials {
+    float: right;
+    width: 185px;
+    font-size: 0;
+    margin-top: 15px; }
+
+/* footer: links */
+.footer-links-title {
+  font: 0.9375em/1.6666 'elektra_light_probold';
+  color: #fff;
+  margin-bottom: 2px; }
+.footer-links__item {
+  margin-bottom: 1px; }
+.footer-links__link {
+  font: 0.9375em/1.6666 'elektra_light_proregular';
+  color: #fff;
+  text-decoration: underline; }
+  .footer-links__link:hover {
+    text-decoration: none; }
+
+/* footer: socials: btns */
+.social-btns {
+  display: inline-block;
+  margin-bottom: 26px; }
+  .social-btns__item {
+    display: inline-block; }
+    .social-btns__item + .social-btns__item {
+      margin-left: 5px; }
+  .social-btns__link {
+    display: block;
+    text-decoration: none; }
+  .social-btns__img {
+    display: block; }
+
+/* footer: socials: icons */
+.social-list {
+  display: inline-block;
+  margin-left: -3px; }
+  .social-list__item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 7px; }
+  .social-list__link {
+    display: block;
+    text-decoration: none; }
+  .social-list__icon {
+    display: block; }
+
+/* = To top btn================================================*/
+.to-top-btn {
+  font: 1em/1 'elektra_medium_proregular';
+  color: #fff;
+  background: #00b9fe;
+  text-decoration: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: inline-block;
+  z-index: 100;
+  padding: 9px 11px; }
+  .to-top-btn:before, .to-top-btn:after {
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 5px;
+    margin-left: -5px; }
+  .to-top-btn:before {
+    border-bottom-color: #00b9fe;
+    bottom: 100%; }
+  .to-top-btn:after {
+    border-bottom-color: #fff;
+    bottom: 0; }
+
+/* = Form elements================================================*/
+.form {
+  margin-bottom: 15px; }
+
+.form-container {
+  background: #f4f6f9;
+  padding: 14px 10px; }
+
+/* form: title */
+.form__title {
+  font: 1.5625em/1 'elektra_medium_proregular';
+  color: #5c7b98;
+  margin-bottom: 20px; }
+
+/* form: lines */
+.form-line {
+  margin-bottom: 15px;
+  display: table;
+  width: 100%;
+  /* form: labels & fields */ }
+  .form-line__label, .form-line__field {
+    display: table-cell;
+    vertical-align: middle; }
+  .form-line__label {
+    padding-right: 7px;
+    min-width: 75px;
+    max-width: 90px; }
+  .form-line__label-text {
+    font: 0.875em/1 'elektra_light_proregular';
+    color: #5c7b98; }
+  .form-line__field {
+    line-height: 0; }
+    .form-line__field_right {
+      text-align: right; }
+
+/* form: controls */
+.form-control, .form-input, .form-textarea {
+  font: 0.75em 'elektra_light_proregular';
+  color: #5c7b98;
+  padding: 4px 7px;
+  width: 100%;
+  border: 1px solid #dae1eb; }
+  .form-control::-webkit-input-placeholder, .form-input::-webkit-input-placeholder, .form-textarea::-webkit-input-placeholder {
+    font: 0.857em 'elektra_light_proregular';
+    color: #dae1eb;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    text-overflow: ellipsis; }
+  .form-control::-moz-placeholder, .form-input::-moz-placeholder, .form-textarea::-moz-placeholder {
+    font: 0.857em 'elektra_light_proregular';
+    color: #dae1eb;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    text-overflow: ellipsis; }
+  .form-control:-ms-input-placeholder, .form-input:-ms-input-placeholder, .form-textarea:-ms-input-placeholder {
+    font: 0.857em 'elektra_light_proregular';
+    color: #dae1eb;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    text-overflow: ellipsis; }
+  .form-control::placeholder, .form-input::placeholder, .form-textarea::placeholder {
+    font: 0.857em 'elektra_light_proregular';
+    color: #dae1eb;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    text-overflow: ellipsis; }
+  .form-control:focus::-webkit-input-placeholder, .form-input:focus::-webkit-input-placeholder, .form-textarea:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease; }
+  .form-control:focus::-moz-placeholder, .form-input:focus::-moz-placeholder, .form-textarea:focus::-moz-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease; }
+  .form-control:focus:-ms-input-placeholder, .form-input:focus:-ms-input-placeholder, .form-textarea:focus:-ms-input-placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease; }
+  .form-control:focus::placeholder, .form-input:focus::placeholder, .form-textarea:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease; }
+
+.form-input {
+  height: 26px; }
+
+.form-textarea {
+  height: 69px;
+  max-height: 200px;
+  resize: vertical; }
+
+/* form: custom select */
+.custom-select {
+  position: relative;
+  width: 51px;
+  display: inline-block;
+  vertical-align: top; }
+  .custom-select + .custom-select {
+    margin-left: 5px; }
+  .custom-select:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 1px;
+    bottom: 1px;
+    width: 26px;
+    background: #00b9fe url('../img/icon/select-arrow.jpg') no-repeat 50% 50%;
+    cursor: pointer; }
+  .custom-select__control {
+    color: #dae1eb;
+    padding-right: 26px;
+    cursor: pointer; }
+  .custom-select__list {
+    display: none;
+    font: 0.75em/1 'elektra_light_proregular';
+    padding: 4px 0;
+    text-align: left;
+    background: #fff;
+    border: 1px solid #dae1eb;
+    max-height: 225px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    left: 0; }
+    .custom-select__list-item {
+      padding: 4px 6px;
+      display: block; }
+
+/* = Form buttons================================================*/
+.btn {
+  font: 0.9375em 'elektra_light_probold';
+  color: #fff;
+  padding: 8px 5px;
+  min-width: 90px;
+  text-align: center;
+  background: #00b9fe;
+  border: none; }
+  .btn_neg {
+    background: #dae1eb; }
+
+.btn_to_left {
+  float: left; }
+.btn_to_right {
+  float: right; }
+
+/* = Gallery================================================*/
+.gallery-list {
+  font-size: 0;
+  margin: 0 0 20px -10px; }
+  .gallery-list__item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 10px 10px; }
+
+/* = Contacts================================================*/
+.contacts-list {
+  background: #f4f6f9;
+  padding: 15px 15px 15px 23px; }
+  .contacts-list__item + .contacts-list__item {
+    margin-top: 10px; }
+  .contacts-list__link {
+    font: 0.875em/1.4285 'elektra_light_proregular';
+    color: #5c7b98;
+    text-decoration: none; }
+
+.contacts-icon {
+  position: relative; }
+  .contacts-icon:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 22px; }
+  .contacts-icon_location {
+    padding-left: 20px; }
+    .contacts-icon_location:before {
+      background: url('../img/icon/location-icon.png') no-repeat 0 0; }
+  .contacts-icon_phone {
+    padding-left: 40px; }
+    .contacts-icon_phone:before {
+      left: 20px;
+      background: url('../img/icon/phone-icon.png') no-repeat 0 0; }
+
+/* = Slider================================================*/
+.slider {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px; }
+  .slider__item {
+    position: relative;
+    display: none; }
+    .slider__item:first-child {
+      display: block; }
+    .slider__item-tip {
+      font: 0.875em/1.4 'elektra_light_proregular';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px 23px;
+      background: rgba(0, 0, 0, 0.55); }
+      .slider__item-tip__title {
+        font-size: 1.2857em;
+        color: #00b9fe;
+        text-decoration: underline;
+        margin-bottom: 1px;
+        display: inline-block; }
+        .slider__item-tip__title:hover {
+          text-decoration: none; }
+      .slider__item-tip__content {
+        color: #fff; }
+    .slider__item-img {
+      display: block; }
+
+/* slider: btns */
+.slider__btn {
+  font: 1.0625em/18px 'elektra_light_probold';
+  color: #5c7b98;
+  background: #fff;
+  display: inline-block;
+  padding: 8px;
+  position: absolute;
+  top: 103px;
+  text-decoration: none; }
+  .slider__btn:before {
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 17px 7px;
+    margin-top: -17px; }
+  .slider__btn_prev {
+    left: 20px; }
+    .slider__btn_prev:before {
+      right: 100%;
+      border-right-color: #fff; }
+    .slider__btn_prev:hover:before {
+      border-right-color: #00b9fe; }
+  .slider__btn_next {
+    right: 20px; }
+    .slider__btn_next:before {
+      left: 100%;
+      border-left-color: #fff; }
+    .slider__btn_next:hover:before {
+      border-left-color: #00b9fe; }
+  .slider__btn:hover {
+    background: #00b9fe;
+    color: #fff; }
+
+/* = Fixes for old browsers================================================*/
+/* rgba */
+.no-rgba .slider__item-tip {
+  background: #000;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=55)"; }
+
+/* = Products================================================*/
+/* products: section */
+.products-section {
+  font: 1.5625em/1 'elektra_medium_proregular';
+  text-align: center;
+  color: #5c7b98;
+  overflow: hidden;
+  margin-bottom: 8px; }
+  .products-section__text {
+    min-width: 280px;
+    max-width: 500px;
+    display: inline-block;
+    vertical-align: middle; }
+  .products-section:before, .products-section:after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+    left: 0;
+    border-bottom: 1px solid #5c7b98; }
+  .products-section:after {
+    margin: 0 -50% 0 0; }
+  .products-section:before {
+    margin: 0 0 0 -50%; }
+
+/* products: list */
+.products-list {
+  display: table;
+  margin-bottom: 40px; }
+  .products-list__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 230px;
+    margin-right: 25px;
+    border: 1px solid #dce2ec;
+    padding: 10px 6px 11px; }
+    .products-list__item:nth-child(3n) {
+      margin-right: 0; }
+
+/* products: list: headline */
+.products-headline {
+  display: table;
+  width: 100%;
+  margin-bottom: 20px; }
+  .products-headline__thumb, .products-headline__title {
+    display: table-cell;
+    vertical-align: middle; }
+  .products-headline__title {
+    padding-top: 10px; }
+  .products-headline__thumb {
+    width: 93px;
+    padding-right: 10px; }
+  .products-headline__link {
+    font: 0.9375em/1.333 'elektra_light_proregular';
+    color: #00b9fe;
+    text-decoration: underline; }
+    .products-headline__link:hover {
+      color: #613993; }
+
+/* products: list: table */
+.products-tbl {
+  padding: 0 10px; }
+
+.products-line {
+  display: table;
+  width: 100%;
+  margin-bottom: 1px; }
+  .products-line__label, .products-line__value {
+    display: table-cell;
+    vertical-align: middle;
+    font: 0.875em/1.42 'elektra_light_proregular';
+    color: #5c7b98; }
+  .products-line__label {
+    width: 100px; }
