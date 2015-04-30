@@ -10,7 +10,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Seo-->
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -22,6 +21,9 @@
   <!-- Styles-->
   <!-- build:css css/normalize.css-->
   <link rel="stylesheet" href="bower/normalize.css/normalize.css">
+  <!-- endbuild-->
+  <!-- build:css css/scrollbar.css-->
+  <link rel="stylesheet" href="bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
   <!-- endbuild-->
   <link rel="stylesheet" href="css/styles.css">
   <!-- JS-->
@@ -64,56 +66,56 @@
                 </div>
                 <div class="form-line__field form-line__field_right">
                   <div class="custom-select">
-                    <div name="day" class="form-input custom-select__control">01</div>
+                    <div name="day" data-default="01" class="form-input custom-select__control">01</div>
                     <ul data-name="dayList" class="custom-select__list">
-                      <li data-val="01" class="custom-select__list-item">01</li>
-                      <li data-val="02" class="custom-select__list-item">02</li>
-                      <li data-val="03" class="custom-select__list-item">03</li>
-                      <li data-val="04" class="custom-select__list-item">04</li>
-                      <li data-val="05" class="custom-select__list-item">05</li>
-                      <li data-val="06" class="custom-select__list-item">06</li>
-                      <li data-val="07" class="custom-select__list-item">07</li>
-                      <li data-val="08" class="custom-select__list-item">08</li>
-                      <li data-val="09" class="custom-select__list-item">09</li>
-                      <li data-val='10' class="custom-select__list-item">10</li>
-                      <li data-val='11' class="custom-select__list-item">11</li>
-                      <li data-val='12' class="custom-select__list-item">12</li>
-                      <li data-val='13' class="custom-select__list-item">13</li>
-                      <li data-val='14' class="custom-select__list-item">14</li>
-                      <li data-val='15' class="custom-select__list-item">15</li>
-                      <li data-val='16' class="custom-select__list-item">16</li>
-                      <li data-val='17' class="custom-select__list-item">17</li>
-                      <li data-val='18' class="custom-select__list-item">18</li>
-                      <li data-val='19' class="custom-select__list-item">19</li>
-                      <li data-val='20' class="custom-select__list-item">20</li>
-                      <li data-val='21' class="custom-select__list-item">21</li>
-                      <li data-val='22' class="custom-select__list-item">22</li>
-                      <li data-val='23' class="custom-select__list-item">23</li>
-                      <li data-val='24' class="custom-select__list-item">24</li>
-                      <li data-val='25' class="custom-select__list-item">25</li>
-                      <li data-val='26' class="custom-select__list-item">26</li>
-                      <li data-val='27' class="custom-select__list-item">27</li>
-                      <li data-val='28' class="custom-select__list-item">28</li>
-                      <li data-val='29' class="custom-select__list-item">29</li>
-                      <li data-val='30' class="custom-select__list-item">30</li>
-                      <li data-val='31' class="custom-select__list-item">31</li>
+                      <li data-value="01" class="custom-select__list-item">01</li>
+                      <li data-value="02" class="custom-select__list-item">02</li>
+                      <li data-value="03" class="custom-select__list-item">03</li>
+                      <li data-value="04" class="custom-select__list-item">04</li>
+                      <li data-value="05" class="custom-select__list-item">05</li>
+                      <li data-value="06" class="custom-select__list-item">06</li>
+                      <li data-value="07" class="custom-select__list-item">07</li>
+                      <li data-value="08" class="custom-select__list-item">08</li>
+                      <li data-value="09" class="custom-select__list-item">09</li>
+                      <li data-value='10' class="custom-select__list-item">10</li>
+                      <li data-value='11' class="custom-select__list-item">11</li>
+                      <li data-value='12' class="custom-select__list-item">12</li>
+                      <li data-value='13' class="custom-select__list-item">13</li>
+                      <li data-value='14' class="custom-select__list-item">14</li>
+                      <li data-value='15' class="custom-select__list-item">15</li>
+                      <li data-value='16' class="custom-select__list-item">16</li>
+                      <li data-value='17' class="custom-select__list-item">17</li>
+                      <li data-value='18' class="custom-select__list-item">18</li>
+                      <li data-value='19' class="custom-select__list-item">19</li>
+                      <li data-value='20' class="custom-select__list-item">20</li>
+                      <li data-value='21' class="custom-select__list-item">21</li>
+                      <li data-value='22' class="custom-select__list-item">22</li>
+                      <li data-value='23' class="custom-select__list-item">23</li>
+                      <li data-value='24' class="custom-select__list-item">24</li>
+                      <li data-value='25' class="custom-select__list-item">25</li>
+                      <li data-value='26' class="custom-select__list-item">26</li>
+                      <li data-value='27' class="custom-select__list-item">27</li>
+                      <li data-value='28' class="custom-select__list-item">28</li>
+                      <li data-value='29' class="custom-select__list-item">29</li>
+                      <li data-value='30' class="custom-select__list-item">30</li>
+                      <li data-value='31' class="custom-select__list-item">31</li>
                     </ul>
                   </div>
                   <div class="custom-select">
-                    <div name="month" class="form-input custom-select__control">11</div>
+                    <div name="month" data-default="11" class="form-input custom-select__control">11</div>
                     <ul dat-name="monthList" class="custom-select__list">
-                      <li data-val="01" class="custom-select__list-item">01</li>
-                      <li data-val="02" class="custom-select__list-item">02</li>
-                      <li data-val="03" class="custom-select__list-item">03</li>
-                      <li data-val="04" class="custom-select__list-item">04</li>
-                      <li data-val="05" class="custom-select__list-item">05</li>
-                      <li data-val="06" class="custom-select__list-item">06</li>
-                      <li data-val="07" class="custom-select__list-item">07</li>
-                      <li data-val="08" class="custom-select__list-item">08</li>
-                      <li data-val="09" class="custom-select__list-item">09</li>
-                      <li data-val='10' class="custom-select__list-item">10</li>
-                      <li data-val='11' class="custom-select__list-item">11</li>
-                      <li data-val='12' class="custom-select__list-item">12</li>
+                      <li data-value="01" class="custom-select__list-item">01</li>
+                      <li data-value="02" class="custom-select__list-item">02</li>
+                      <li data-value="03" class="custom-select__list-item">03</li>
+                      <li data-value="04" class="custom-select__list-item">04</li>
+                      <li data-value="05" class="custom-select__list-item">05</li>
+                      <li data-value="06" class="custom-select__list-item">06</li>
+                      <li data-value="07" class="custom-select__list-item">07</li>
+                      <li data-value="08" class="custom-select__list-item">08</li>
+                      <li data-value="09" class="custom-select__list-item">09</li>
+                      <li data-value='10' class="custom-select__list-item">10</li>
+                      <li data-value='11' class="custom-select__list-item">11</li>
+                      <li data-value='12' class="custom-select__list-item">12</li>
                     </ul>
                   </div>
                 </div>
@@ -409,9 +411,13 @@
   <!-- build:js js/vendor/jquery.min.js-->
   <script src="bower/jquery/dist/jquery.min.js"></script>
   <!-- endbuild-->
+  <!-- build:js js/vendor/jquery.scrollbar.min.js-->
+  <script src="bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <!-- endbuild-->
   <!--[if IE 8]>
   <script src='js/vendor/selectivizr.min.js'></script>
   <![endif]-->
   <script src="js/main.js"></script>
+  <script src="js/tooltip.js"></script>
   <!-- JS: end-->
 </body>

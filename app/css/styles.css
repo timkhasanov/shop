@@ -37,7 +37,6 @@
 .clearfix:before, .container:before, .btn-container:before, .clearfix:after, .container:after, .btn-container:after {
   content: "";
   display: table; }
-
 .clearfix:after, .container:after, .btn-container:after {
   clear: both; }
 
@@ -202,8 +201,7 @@ img {
 .form-line {
   margin-bottom: 15px;
   display: table;
-  width: 100%;
-  /* form: labels & fields */ }
+  width: 100%; }
   .form-line__label, .form-line__field {
     display: table-cell;
     vertical-align: middle; }
@@ -263,6 +261,18 @@ img {
     opacity: 0;
     transition: opacity 0.3s ease; }
 
+.error {
+  background: #fdd5d2;
+  border-color: #f97e76; }
+  .error::-webkit-input-placeholder {
+    color: #f97e76; }
+  .error::-moz-placeholder {
+    color: #f97e76; }
+  .error:-ms-input-placeholder {
+    color: #f97e76; }
+  .error::placeholder {
+    color: #f97e76; }
+
 .form-input {
   height: 26px; }
 
@@ -296,10 +306,12 @@ img {
     padding: 5px 26px 4px 5px;
     cursor: pointer;
     text-align: left; }
+    .custom-select__control_selected {
+      color: #5c7b98; }
   .custom-select__list {
     display: none;
     font: 12px/1 'elektra_light_proregular';
-    padding: 4px 0;
+    padding: 2px 0 0 2px;
     text-align: left;
     background: #fff;
     border: 1px solid #dae1eb;
@@ -312,7 +324,35 @@ img {
     left: 0; }
     .custom-select__list-item {
       padding: 4px 6px;
-      display: block; }
+      display: block;
+      cursor: pointer; }
+      .custom-select__list-item:hover {
+        background-color: #f4f6f9; }
+      .custom-select__list-item:first-child {
+        padding-top: 6px; }
+      .custom-select__list-item:last-child {
+        padding-bottom: 6px; }
+
+.ie .custom-select__control {
+  color: #5c7b98; }
+
+/* scroll overrides */
+.mCSB_scrollTools {
+  width: 10px; }
+  .mCSB_scrollTools .mCSB_draggerRail {
+    background: none; }
+  .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #00b9fe;
+    border-radius: 0;
+    width: 7px; }
+  .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: #009fda;
+    -webkit-filter: none;
+    filter: none;
+    -ms-filter: none; }
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 11px; }
 
 /* = Form buttons================================================*/
 .btn {
@@ -323,7 +363,8 @@ img {
   text-align: center;
   background: #00b9fe;
   border: none;
-  transition: background .3s ease; }
+  transition: background .3s ease;
+  cursor: pointer; }
   .btn:hover {
     background: #009fda; }
   .btn_neg {
@@ -335,6 +376,60 @@ img {
   float: left; }
 .btn_to_right {
   float: right; }
+
+/* = Form tooltip================================================*/
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  transition: all .4s ease; }
+  .tooltip__inner {
+    font-size: 12px;
+    color: #fff;
+    padding: 5px 8px;
+    min-width: 100px;
+    text-align: center;
+    text-decoration: none;
+    background: #f97e76;
+    border-radius: 2px;
+    white-space: nowrap; }
+    .tooltip__inner:after {
+      content: "";
+      position: absolute;
+      border-color: transparent;
+      border-style: solid; }
+
+.tooltip_right, .tooltip_left {
+  padding: 0 5px; }
+  .tooltip_right .tooltip__inner:after, .tooltip_left .tooltip__inner:after {
+    top: 50%;
+    margin-top: -5px; }
+
+.tooltip_top, .tooltip_bottom {
+  padding: 5px 0; }
+  .tooltip_top .tooltip__inner:after, .tooltip_bottom .tooltip__inner:after {
+    left: 50%;
+    margin-left: -5px; }
+
+.tooltip_right .tooltip__inner:after {
+  left: 0;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #f97e76; }
+
+.tooltip_left .tooltip__inner:after {
+  right: 0;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #f97e76; }
+
+.tooltip_bottom .tooltip__inner:after {
+  top: 0;
+  border-width: 0 5px 5px;
+  border-bottom-color: #f97e76; }
+
+.tooltip_top .tooltip__inner:after {
+  bottom: 0;
+  border-width: 5px 5px 0;
+  border-top-color: #f97e76; }
 
 /* = Gallery================================================*/
 .gallery-list {
@@ -408,6 +503,9 @@ img {
         color: #fff; }
 
 /* slider: btns */
+.slider__btns {
+  display: none; }
+
 .slider__btn {
   font: 17px/18px 'elektra_light_probold';
   color: #5c7b98;

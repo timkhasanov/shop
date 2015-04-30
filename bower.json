@@ -8,6 +8,7 @@
   ],
   "dependencies": {
     "jquery": "1.11.2",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "malihu-custom-scrollbar-plugin": "~3.0.8"
   }
 }
