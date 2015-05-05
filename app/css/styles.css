@@ -524,11 +524,13 @@ img {
         font-size: 18px;
         color: #00b9fe;
         text-decoration: underline;
-        display: inline-block; }
+        display: inline-block;
+        position: relative; }
         .slider-list__tip-title:hover {
           text-decoration: none; }
       .slider-list__tip-content {
-        color: #fff; }
+        color: #fff;
+        position: relative; }
 
 /* slider: btns */
 .slider__btns {
