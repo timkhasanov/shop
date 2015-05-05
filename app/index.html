@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!--[if IE 8]>
-<html class='no-js ie ie8' lang='ru>
+<html class='no-js ie ie8' lang='ru-RU'>
 <![endif]-->
 <!--[if IE]>
-<html class='no-js ie' lang='ru'>
+<html class='no-js ie' lang='ru-RU'>
 <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class='no-js' lang='ru'>
+<html class='no-js' lang='ru-RU'>
   <!--<![endif]-->
 
   <head>
@@ -21,31 +21,35 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>ЭпплShop</title>
     <!-- Styles-->
-    <!-- build:css css/normalize.css-->
-    <link rel="stylesheet" href="bower/normalize.css/normalize.css">
+    <!-- build:css css/vendor.min.css-->
+    <!-- bower:css-->
+    <link rel="stylesheet" href="/bower/normalize.css/normalize.css">
+    <link rel="stylesheet" href="/bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- endbower-->
     <!-- endbuild-->
-    <!-- build:css css/scrollbar.css-->
-    <link rel="stylesheet" href="bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
-    <!-- endbuild-->
+    <!-- build:css css/styles.min.css-->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild-->
     <!-- JS-->
     <script src="js/vendor/modernizr.min.js"></script>
   </head>
 
   <body>
     <!--[if lt IE 8]>
-  <p class='b-unhappy-browser'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
+  <p class='unhappy-browser'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
     <!-- Content: start-->
     <div class="wrapper">
       <div class="main-content">
         <div class="container">
           <div class="container__left">
-            <div class="logo"><img src="img/misc/logo.png" alt="ЭпплShop" class="logo__img">
-              <div class="logo__text">ЭпплShop</div>
+            <div class="logo">
+              <a href="/" class="logo__link"><img src="img/misc/logo.png" alt="ЭпплShop" class="logo__img">
+                <div class="logo__text">ЭпплShop</div>
+              </a>
             </div>
-            <form class="form">
-              <div class="form-container">
+            <div class="form-container">
+              <form action="call.php" method="post" class="form">
                 <div class="form__title">Заказать звонок</div>
                 <div class="form-line">
                   <div class="form-line__label">
@@ -67,8 +71,9 @@
                   </div>
                   <div class="form-line__field form-line__field_right">
                     <div class="custom-select">
-                      <div name="day" data-default="01" class="form-input custom-select__control">01</div>
-                      <ul data-name="dayList" class="custom-select__list">
+                      <div data-default="01" data-name="day" class="form-input custom-select__control">01</div>
+                      <input type="hidden" name="day" class="custom-select__control-required">
+                      <ul class="custom-select__list">
                         <li data-value="01" class="custom-select__list-item">01</li>
                         <li data-value="02" class="custom-select__list-item">02</li>
                         <li data-value="03" class="custom-select__list-item">03</li>
@@ -103,8 +108,9 @@
                       </ul>
                     </div>
                     <div class="custom-select">
-                      <div name="month" data-default="11" class="form-input custom-select__control">11</div>
-                      <ul dat-name="monthList" class="custom-select__list">
+                      <div data-default="11" data-name="month" class="form-input custom-select__control">11</div>
+                      <input type="hidden" name="month" class="custom-select__control-required">
+                      <ul class="custom-select__list">
                         <li data-value="01" class="custom-select__list-item">01</li>
                         <li data-value="02" class="custom-select__list-item">02</li>
                         <li data-value="03" class="custom-select__list-item">03</li>
@@ -129,8 +135,8 @@
                 <div class="btn-container">
                   <input type="submit" value="Отправить" class="btn btn_to_left">
                   <input type="reset" value="Очистить" class="btn btn_neg btn_to_right"> </div>
-              </div>
-            </form>
+              </form>
+            </div>
             <ul class="gallery-list">
               <li class="gallery-list__item"><img src="img/gallery/gallery-thumb-1.jpg" alt="thumb-gallery-1" class="gallery-list__item-img"></li>
               <li class="gallery-list__item"><img src="img/gallery/gallery-thumb-2.jpg" alt="thumb-gallery-2" class="gallery-list__item-img"></li>
@@ -157,10 +163,10 @@
                 </li>
                 <li class="slider-list__item"><img src="img/slider/slide-1.jpg" alt="Конкурс на концепт IPhone 7" class="slider-list__item-img">
                   <div class="slider-list__tip"><a href="#" class="slider-list__tip-title">Конкурс на концепт IPhone 7</a>
-                    <div class="slider-list__tip-content">Выйграй iPad Air за самый необычный и интереный дизайн нового iPhone 7.</div>
+                    <div class="slider-list__tip-content">Выйграй iPad Air за самый необычный и интересный дизайн нового iPhone 7.</div>
                   </div>
                 </li>
-                <li class="slider-list__item"><img src="img/slider/slide-2.jpg" alt="До 31 декабря, iPhone 4 за 9900 руб" class="slider-list__item-img">
+                <li class="slider-list__item"><img src="img/slider/slide-2.jpg" alt="До 31 декабря, iPhone 4 за 9900 руб." class="slider-list__item-img">
                   <div class="slider-list__tip"><a href="#" class="slider-list__tip-title">До 31 декабря, iPhone 4 за 9900 руб.</a>
                     <div class="slider-list__tip-content">Нет денег на шестой iPhone? Купи себе четвертый!</div>
                   </div>
@@ -174,7 +180,7 @@
                 <li class="products-list__item">
                   <div class="products-headline">
                     <div class="products-headline__thumb"><img src="img/products/apple-thunderb-27.jpg" alt="Apple Thunderb Display 27&quot;" class="products-headline__img"></div>
-                    <div class="products-headline__title"><a href="#" class="products-headline__link">Apple Thunderb Display 27"</a></div>
+                    <div class="products-headline__title"><a href="#" class="products-headline__link">Apple Thunderb Display 27&quot;</a></div>
                   </div>
                   <div class="products-tbl">
                     <div class="products-line">
@@ -202,7 +208,7 @@
                 <li class="products-list__item">
                   <div class="products-headline">
                     <div class="products-headline__thumb"><img src="img/products/iMac-27.jpg" alt="iMac 27&quot;" class="products-headline__img"></div>
-                    <div class="products-headline__title"><a href="#" class="products-headline__link"> iMac 27"</a></div>
+                    <div class="products-headline__title"><a href="#" class="products-headline__link">iMac 27&quot;</a></div>
                   </div>
                   <div class="products-tbl">
                     <div class="products-line">
@@ -230,7 +236,7 @@
                 <li class="products-list__item">
                   <div class="products-headline">
                     <div class="products-headline__thumb"><img src="img/products/iPhone-5s-Gold.jpg" alt="iPhone 5s Gold" class="products-headline__img"></div>
-                    <div class="products-headline__title"><a href="#" class="products-headline__link"> iPhone 5s Gold</a></div>
+                    <div class="products-headline__title"><a href="#" class="products-headline__link">iPhone 5s Gold</a></div>
                   </div>
                   <div class="products-tbl">
                     <div class="products-line">
@@ -261,7 +267,7 @@
                 <li class="products-list__item">
                   <div class="products-headline">
                     <div class="products-headline__thumb"><img src="img/products/iPad-Air-Silver.jpg" alt="iPad Air Wi-Fi 128GB - Silver" class="products-headline__img"></div>
-                    <div class="products-headline__title"><a href="#" class="products-headline__link"> iPad Air Wi-Fi 128GB - Silver</a></div>
+                    <div class="products-headline__title"><a href="#" class="products-headline__link">iPad Air Wi-Fi 128GB - Silver</a></div>
                   </div>
                   <div class="products-tbl">
                     <div class="products-line">
@@ -289,7 +295,7 @@
                 <li class="products-list__item">
                   <div class="products-headline">
                     <div class="products-headline__thumb"><img src="img/products/Apple-iPod-Blue.jpg" alt="Apple iPod nano 7G 16 ГБ Blue" class="products-headline__img"></div>
-                    <div class="products-headline__title"><a href="#" class="products-headline__link"> Apple iPod nano 7G 16 ГБ Blue</a></div>
+                    <div class="products-headline__title"><a href="#" class="products-headline__link">Apple iPod nano 7G 16 ГБ Blue</a></div>
                   </div>
                   <div class="products-tbl">
                     <div class="products-line">
@@ -317,7 +323,7 @@
                 <li class="products-list__item">
                   <div class="products-headline">
                     <div class="products-headline__thumb"><img src="img/products/Apple-AirPort.jpg" alt="Роутер Wi-Fi Apple AirPort" class="products-headline__img"></div>
-                    <div class="products-headline__title"><a href="#" class="products-headline__link"> Роутер Wi-Fi Apple AirPort</a></div>
+                    <div class="products-headline__title"><a href="#" class="products-headline__link">Роутер Wi-Fi Apple AirPort</a></div>
                   </div>
                   <div class="products-tbl">
                     <div class="products-line">
@@ -353,8 +359,10 @@
     <footer class="footer">
       <div class="container">
         <div class="container__left">
-          <div class="footer__logo"><img src="img/misc/logo-white.png" alt="ЭпплShop" class="footer__logo-img">
-            <div class="logo__text">ЭпплShop</div>
+          <div class="footer__logo">
+            <a href="/" class="logo__link"><img src="img/misc/logo-white.png" alt="ЭпплShop" class="footer__logo-img">
+              <div class="logo__text">ЭпплShop</div>
+            </a>
           </div>
         </div>
         <div class="container__right">
@@ -407,16 +415,20 @@
     </footer>
     <!-- Footer: end-->
     <!-- JS: start-->
-    <!-- build:js js/vendor/jquery.min.js-->
-    <script src="bower/jquery/dist/jquery.min.js"></script>
-    <!-- endbuild-->
-    <!-- build:js js/vendor/jquery.scrollbar.min.js-->
-    <script src="bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- build:js js/vendor/vendor.min.js-->
+    <!-- bower:js-->
+    <script src="/bower/jquery/dist/jquery.js"></script>
+    <script src="/bower/jquery-mousewheel/jquery.mousewheel.js"></script>
+    <script src="/bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js"></script>
+    <!-- endbower-->
     <!-- endbuild-->
     <!--[if IE 8]>
   <script src='js/vendor/selectivizr.min.js'></script>
   <![endif]-->
+    <!-- build:js js/scripts.min.js-->
     <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/forms.js"></script>
     <script src="js/tooltip.js"></script>
-    <!-- JS: end-->
+    <!-- endbuild-->
   </body>

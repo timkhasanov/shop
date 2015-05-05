@@ -183,13 +183,19 @@ img {
     border-bottom-color: #fff;
     bottom: 0; }
 
-/* = Form elements================================================*/
-.form {
-  margin-bottom: 15px; }
+/* = Unhappy browser================================================*/
+.unhappy-browser {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.3em;
+  text-align: center; }
 
+/* = Form elements================================================*/
 .form-container {
   background: #f4f6f9;
-  padding: 14px 10px; }
+  padding: 14px 10px;
+  margin-bottom: 15px; }
 
 /* form: title */
 .form__title {
@@ -284,34 +290,37 @@ img {
 /* form: custom select */
 .custom-select {
   position: relative;
-  width: 51px;
+  width: 52px;
   display: inline-block;
   vertical-align: top;
   background: #fff; }
   .custom-select + .custom-select {
     margin-left: 5px; }
-  .custom-select:before {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 1px;
-    height: 24px;
-    width: 26px;
-    background-color: #00b9fe;
-    background-image: url('../img/icon/select-arrow.jpg');
-    background-repeat: no-repeat;
-    cursor: pointer; }
   .custom-select__control {
     color: #dae1eb;
     padding: 5px 26px 4px 5px;
     cursor: pointer;
-    text-align: left; }
+    text-align: left;
+    position: relative; }
+    .custom-select__control:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 24px;
+      width: 27px;
+      background-color: #00b9fe;
+      background-image: url('../img/icon/select-arrow.jpg');
+      background-repeat: no-repeat;
+      cursor: pointer; }
     .custom-select__control_selected {
       color: #5c7b98; }
+    .custom-select__control.error {
+      color: #f97e76; }
   .custom-select__list {
     display: none;
     font: 12px/1 'elektra_light_proregular';
-    padding: 2px 0 0 2px;
+    padding: 2px 0 2px 2px;
     text-align: left;
     background: #fff;
     border: 1px solid #dae1eb;
@@ -377,6 +386,25 @@ img {
 .btn_to_right {
   float: right; }
 
+.btn[disabled] {
+  opacity: 0.5; }
+
+/* = Form message================================================*/
+.message {
+  font-size: 12px;
+  margin-bottom: 20px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 2px; }
+  .message_error {
+    color: #f97e76;
+    background: #fdd5d2;
+    border-color: #f97e76; }
+  .message_success {
+    color: #49bb7b;
+    background: #c3e9d4;
+    border-color: #49bb7b; }
+
 /* = Form tooltip================================================*/
 .tooltip {
   position: absolute;
@@ -387,7 +415,7 @@ img {
     font-size: 12px;
     color: #fff;
     padding: 5px 8px;
-    min-width: 100px;
+    min-width: 120px;
     text-align: center;
     text-decoration: none;
     background: #f97e76;
@@ -496,11 +524,13 @@ img {
         font-size: 18px;
         color: #00b9fe;
         text-decoration: underline;
-        display: inline-block; }
+        display: inline-block;
+        position: relative; }
         .slider-list__tip-title:hover {
           text-decoration: none; }
       .slider-list__tip-content {
-        color: #fff; }
+        color: #fff;
+        position: relative; }
 
 /* slider: btns */
 .slider__btns {
