@@ -7,21 +7,12 @@
 # validate
 # clean
 customSelect = do ->
-	$select = {}
-	$selectList = {}
-	$selectControl = {}
-	$itemHidden = {}
 
 	init = ->
-		$select = $('.custom-select')
-		$selectList = $('.custom-select__list')
-		$selectControl = $('.custom-select__control')
-		$itemHidden = $('.custom-select__control-required')
-
 		_setUpListeners()
 
 	_setUpListeners = ->
-		$select.on 'click touchstart', _showCustomSelect
+		$('.custom-select').on 'click touchstart', _showCustomSelect
 		$('.custom-select__list-item').on 'click touchstart', _changeSelectOption
 		$(document).on 'click touchstart', hideCustomSelect
 
@@ -48,9 +39,9 @@ customSelect = do ->
 		$itemHidden.val(itemVal)
 
 	hideCustomSelect = ->
-		if $select.hasClass('custom-select_active')
-			$select.removeClass 'custom-select_active'
-			$selectList.not(':animated').slideUp()
+		if $('.custom-select').hasClass('custom-select_active')
+			$('.custom-select').removeClass 'custom-select_active'
+			$('.custom-select__list').not(':animated').slideUp()
 
 	validateCustomSelect = ->
 		$itemHidden = $('.custom-select__control-required')
@@ -75,7 +66,11 @@ customSelect = do ->
 		return valid
 
 	cleanCustomSelect = ->
+		$select = $('.custom-select')
+		$selectList = $('.custom-select__list')
+		$selectControl = $('.custom-select__control')
 		$itemHidden = $('.custom-select__control-required')
+
 		$select.removeClass 'custom-select_active'
 		$selectList.slideUp()
 		$selectControl.removeClass 'custom-select__control_selected error'

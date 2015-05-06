@@ -3,24 +3,17 @@
   var customSelect, forms;
 
   customSelect = (function() {
-    var $itemHidden, $select, $selectControl, $selectList, _changeSelectOption, _setUpListeners, _showCustomSelect, cleanCustomSelect, hideCustomSelect, init, validateCustomSelect;
-    $select = {};
-    $selectList = {};
-    $selectControl = {};
-    $itemHidden = {};
+    var _changeSelectOption, _setUpListeners, _showCustomSelect, cleanCustomSelect, hideCustomSelect, init, validateCustomSelect;
     init = function() {
-      $select = $('.custom-select');
-      $selectList = $('.custom-select__list');
-      $selectControl = $('.custom-select__control');
-      $itemHidden = $('.custom-select__control-required');
       return _setUpListeners();
     };
     _setUpListeners = function() {
-      $select.on('click touchstart', _showCustomSelect);
+      $('.custom-select').on('click touchstart', _showCustomSelect);
       $('.custom-select__list-item').on('click touchstart', _changeSelectOption);
       return $(document).on('click touchstart', hideCustomSelect);
     };
     _showCustomSelect = function() {
+      var $select, $selectList;
       $select = $(this);
       $selectList = $select.find('.custom-select__list');
       if ($select.hasClass('custom-select_active')) {
@@ -32,7 +25,7 @@
       }
     };
     _changeSelectOption = function() {
-      var $item, $itemParent, itemVal;
+      var $item, $itemHidden, $itemParent, itemVal;
       $item = $(this);
       itemVal = $item.attr('data-value');
       $itemHidden = $item.parents('.custom-select').find('.custom-select__control-required');
@@ -42,13 +35,13 @@
       return $itemHidden.val(itemVal);
     };
     hideCustomSelect = function() {
-      if ($select.hasClass('custom-select_active')) {
-        $select.removeClass('custom-select_active');
-        return $selectList.not(':animated').slideUp();
+      if ($('.custom-select').hasClass('custom-select_active')) {
+        $('.custom-select').removeClass('custom-select_active');
+        return $('.custom-select__list').not(':animated').slideUp();
       }
     };
     validateCustomSelect = function() {
-      var valid;
+      var $itemHidden, valid;
       $itemHidden = $('.custom-select__control-required');
       valid = true;
       $.each($itemHidden, function() {
@@ -74,6 +67,10 @@
       return valid;
     };
     cleanCustomSelect = function() {
+      var $itemHidden, $select, $selectControl, $selectList;
+      $select = $('.custom-select');
+      $selectList = $('.custom-select__list');
+      $selectControl = $('.custom-select__control');
       $itemHidden = $('.custom-select__control-required');
       $select.removeClass('custom-select_active');
       $selectList.slideUp();
