@@ -49,6 +49,7 @@
     };
     validateCustomSelect = function() {
       var valid;
+      $itemHidden = $('.custom-select__control-required');
       valid = true;
       $.each($itemHidden, function() {
         var $control, $controlParent, controlVal;

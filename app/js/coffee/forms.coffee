@@ -53,6 +53,7 @@ customSelect = do ->
 			$selectList.not(':animated').slideUp()
 
 	validateCustomSelect = ->
+		$itemHidden = $('.custom-select__control-required')
 		valid = true
 
 		$.each $itemHidden, ->
@@ -71,8 +72,7 @@ customSelect = do ->
 						content: 'Укажите месяц'
 				valid = false
 			return
-
-		valid
+		return valid
 
 	cleanCustomSelect = ->
 		$itemHidden = $('.custom-select__control-required')
