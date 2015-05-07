@@ -108,7 +108,7 @@ gulp.task('html:build', function () {
 	return gulp.src(path.src.html)
 		.pipe(assets)
 		.pipe(gulpif('*.js', uglify()))
-		.pipe(gulpif('*.css', minifyCSS()))
+		.pipe(gulpif('*.css', minifyCSS({compatibility: 'ie8'})))
 		.pipe(assets.restore())
 		.pipe(useref())
 		.pipe(gulp.dest(path.build.html));
