@@ -116,7 +116,7 @@ gulp.task('html:build', function () {
 	var assets = useref.assets();
 	return gulp.src(path.src.html)
 		.pipe(assets)
-		.pipe(gulpif(path.src.js/'*.js', uglify()))
+		.pipe(gulpif('*.js', uglify()))
 		.pipe(gulpif('*.css', minifyCSS()))
 		.pipe(assets.restore())
 		.pipe(useref())
