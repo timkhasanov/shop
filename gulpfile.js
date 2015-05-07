@@ -87,7 +87,6 @@ gulp.task('default', ['server', 'watch']);
 var path = {
 	build: {
 		html: './dist/',
-		js: './dist/js/',
 		vendorjs: './dist/js/vendor/',
 		plugins: './dist/plugins/',
 		img: './dist/img/',
@@ -96,18 +95,10 @@ var path = {
 	src: {
 		html: './app/*.html',
 		php: './app/*.php',
-		js: './app/js/*.js',
 		vendorjs: './app/js/vendor/*',
 		plugins: './app/plugins/**/*.*',
 		img: './app/img/**/*.*',
 		fonts: './app/fonts/**/*.*'
-	},
-	watch: {
-		html: './app/*.html',
-		php: './app/*.php',
-		js: './app/js/**/*.js',
-		img: './app/img/**/*.*',
-		fonts: './app/fonts/*.*'
 	},
 	clean: './dist'
 };
