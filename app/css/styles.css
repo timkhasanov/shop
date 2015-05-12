@@ -115,6 +115,8 @@ img {
     width: 185px;
     font-size: 0;
     margin-top: 15px; }
+    .footer__socials-btns {
+      margin-bottom: 26px; }
 
 /* footer: links */
 .footer-links-title {
@@ -130,8 +132,7 @@ img {
 
 /* footer: socials: btns */
 .social-btns {
-  display: inline-block;
-  margin-bottom: 26px; }
+  display: inline-block; }
   .social-btns__item {
     display: inline-block; }
     .social-btns__item + .social-btns__item {
