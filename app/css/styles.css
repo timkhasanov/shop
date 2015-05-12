@@ -84,6 +84,8 @@ img {
 /* = Left column================================================*/
 .logo {
   margin-bottom: 18px; }
+  .logo__link {
+    display: block; }
   .logo__text {
     display: none; }
 
@@ -116,9 +118,9 @@ img {
 
 /* footer: links */
 .footer-links-title {
-  font: 15px/25px 'elektra_light_probold';
+  font: 15px/1 'elektra_light_probold';
   color: #fff;
-  margin-bottom: 1px; }
+  margin-bottom: 9px; }
 .footer-links__link {
   font: 15px/25px 'elektra_light_proregular';
   color: #fff;
