@@ -3,7 +3,7 @@
   var slider;
 
   slider = (function() {
-    var $sliderBtns, $sliderItems, $sliderList, _setUpListeners, _sliderInit, _sliderNextSlide, _sliderPrevSlide, _sliderRotate, _sliderStop, animSpeed, init, leftValue, sliderItemWidth, sliderItemsCount, sliderStart, speed;
+    var $sliderBtns, $sliderItems, $sliderList, animSpeed, init, leftValue, setUpListeners, sliderInit, sliderItemWidth, sliderItemsCount, sliderNextSlide, sliderPrevSlide, sliderRotate, sliderStart, sliderStop, speed;
     speed = 5000;
     animSpeed = 1000;
     $sliderList = $('.slider-list');
@@ -16,25 +16,25 @@
     init = function() {
       sliderItemWidth = $sliderItems.outerWidth(true);
       leftValue = sliderItemWidth * (-1);
-      return _setUpListeners();
+      return setUpListeners();
     };
-    _setUpListeners = function() {
-      _sliderInit();
-      _sliderStop();
-      $('.slider__btn_prev').on('click touchstart', _sliderPrevSlide);
-      return $('.slider__btn_next').on('click touchstart', _sliderNextSlide);
+    setUpListeners = function() {
+      sliderInit();
+      sliderStop();
+      $('.slider__btn_prev').on('click touchstart', sliderPrevSlide);
+      return $('.slider__btn_next').on('click touchstart', sliderNextSlide);
     };
-    _sliderInit = function() {
+    sliderInit = function() {
       $sliderBtns.fadeIn();
       $sliderList.css({
         'left': leftValue,
         'width': sliderItemWidth * sliderItemsCount
       });
       return sliderStart = setInterval(function() {
-        return _sliderRotate();
+        return sliderRotate();
       }, speed);
     };
-    _sliderPrevSlide = function(e) {
+    sliderPrevSlide = function(e) {
       var $firstSlide, $lastSlide, leftIndent;
       if (e.preventDefault) {
         e.preventDefault();
@@ -53,7 +53,7 @@
         });
       });
     };
-    _sliderNextSlide = function(e) {
+    sliderNextSlide = function(e) {
       var $firstSlide, $lastSlide, leftIndent;
       if (e.preventDefault) {
         e.preventDefault();
@@ -72,16 +72,16 @@
         });
       });
     };
-    _sliderStop = function() {
+    sliderStop = function() {
       return $sliderList.mouseenter(function() {
         return clearInterval(sliderStart);
       }).mouseleave(function() {
         return sliderStart = setInterval(function() {
-          return _sliderRotate();
+          return sliderRotate();
         }, speed);
       });
     };
-    _sliderRotate = function() {
+    sliderRotate = function() {
       return $('.slider__btn_next').click();
     };
     return {

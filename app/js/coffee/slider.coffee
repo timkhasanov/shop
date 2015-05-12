@@ -20,22 +20,22 @@ slider = do ->
 	init = ->
 		sliderItemWidth = $sliderItems.outerWidth(true)
 		leftValue = sliderItemWidth * (-1)
-		_setUpListeners()
+		setUpListeners()
 
-	_setUpListeners = ->
-		_sliderInit()
-		_sliderStop()
-		$('.slider__btn_prev').on 'click touchstart', _sliderPrevSlide
-		$('.slider__btn_next').on 'click touchstart', _sliderNextSlide
+	setUpListeners = ->
+		sliderInit()
+		sliderStop()
+		$('.slider__btn_prev').on 'click touchstart', sliderPrevSlide
+		$('.slider__btn_next').on 'click touchstart', sliderNextSlide
 
-	_sliderInit = ->
+	sliderInit = ->
 		$sliderBtns.fadeIn()
 		$sliderList.css 'left':leftValue, 'width': sliderItemWidth * sliderItemsCount
 		sliderStart = setInterval(->
-			_sliderRotate()
+			sliderRotate()
 		, speed)
 
-	_sliderPrevSlide = (e) ->
+	sliderPrevSlide = (e) ->
 		if e.preventDefault then e.preventDefault() else e.returnValue
 
 		leftIndent = parseInt($sliderList.css 'left') + sliderItemWidth
@@ -47,7 +47,7 @@ slider = do ->
 				$firstSlide.before($lastSlide)
 				$sliderList.css 'left': leftValue
 
-	_sliderNextSlide  = (e) ->
+	sliderNextSlide  = (e) ->
 		if e.preventDefault then e.preventDefault() else e.returnValue
 
 		leftIndent = parseInt($sliderList.css 'left') - sliderItemWidth
@@ -59,17 +59,17 @@ slider = do ->
 				$lastSlide.after($firstSlide)
 				$sliderList.css 'left': leftValue
 
-	_sliderStop = ->
+	sliderStop = ->
 		$sliderList
 			.mouseenter(->
 				clearInterval sliderStart
 			).mouseleave(->
 				sliderStart = setInterval(->
-					_sliderRotate()
+					sliderRotate()
 				, speed)
 			)
 
-	_sliderRotate = ->
+	sliderRotate = ->
 		$('.slider__btn_next').click()
 
 	{init: init}

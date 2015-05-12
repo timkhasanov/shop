@@ -9,14 +9,14 @@
 customSelect = do ->
 
 	init = ->
-		_setUpListeners()
+		setUpListeners()
 
-	_setUpListeners = ->
-		$('.custom-select').on 'click touchstart', _showCustomSelect
-		$('.custom-select__list-item').on 'click touchstart', _changeSelectOption
+	setUpListeners = ->
+		$('.custom-select').on 'click touchstart', showCustomSelect
+		$('.custom-select__list-item').on 'click touchstart', changeSelectOption
 		$(document).on 'click touchstart', hideCustomSelect
 
-	_showCustomSelect = ->
+	showCustomSelect = ->
 		$select = $(this)
 		$selectList = $select.find('.custom-select__list')
 
@@ -26,8 +26,9 @@ customSelect = do ->
 		else
 			$select.addClass 'custom-select_active'
 			$selectList.not(':animated').slideDown()
+		return false
 
-	_changeSelectOption = ->
+	changeSelectOption = ->
 		$item = $(this)
 		itemVal = $item.attr('data-value')
 		$itemHidden = $item.parents('.custom-select').find('.custom-select__control-required')
@@ -39,9 +40,8 @@ customSelect = do ->
 		$itemHidden.val(itemVal)
 
 	hideCustomSelect = ->
-		if $('.custom-select').hasClass('custom-select_active')
-			$('.custom-select').removeClass 'custom-select_active'
-			$('.custom-select__list').not(':animated').slideUp()
+		$('.custom-select').removeClass 'custom-select_active'
+		$('.custom-select__list').not(':animated').slideUp()
 
 	validateCustomSelect = ->
 		$itemHidden = $('.custom-select__control-required')
@@ -106,17 +106,17 @@ $(window).on 'load', ->
 forms = do ->
 
 	init = ->
-		_setUpListeners()
-		_iePlaceholder()
+		setUpListeners()
+		iePlaceholder()
 
-	_setUpListeners = ->
+	setUpListeners = ->
 		$form = $('form')
 
-		$form.on 'reset', _formClear
-		$form.on 'submit', _formSubmit
-		$form.on 'keydown', '.required', _formHideError
+		$form.on 'reset', formClear
+		$form.on 'submit', formSubmit
+		$form.on 'keydown', '.required', formHideError
 
-	_iePlaceholder = ->
+	iePlaceholder = ->
 		unless 'placeholder' of document.createElement('input')
 			$('[placeholder]')
 			.on('focus', ->
@@ -141,7 +141,7 @@ forms = do ->
 			$('[placeholder]').trigger 'blur'
 		), 100
 
-	_formSubmit = (e) ->
+	formSubmit = (e) ->
 		if e.preventDefault then e.preventDefault() else e.returnValue
 
 		$form = $(this)
@@ -149,7 +149,7 @@ forms = do ->
 		formAction = $form.attr('action')
 		$sbtBtn = $form.find('input[type="submit"]')
 		$rstBtn = $form.find('input[type="reset"]')
-		formValidated = _formValidation($form)
+		formValidated = formValidation($form)
 		customValidated = customSelect.validate()
 
 		customSelect.hide()
@@ -165,14 +165,14 @@ forms = do ->
 			).done((data) ->
 				data = JSON.parse(data)
 				if data.status is 'OK'
-					_formClear()
+					formClear()
 					$formTitle.after '<div class="message message_success">' + data.msg + '</div>'
 				else
 					$formTitle.after '<div class="message message_error">' + data.msg + '</div>'
 			).always ->
 				$sbtBtn.add($rstBtn).removeAttr 'disabled'
 
-	_formValidation = ($form) ->
+	formValidation = ($form) ->
 		$controlList = $form.find('.required')
 		valid = true
 
@@ -196,15 +196,15 @@ forms = do ->
 				valid = false
 			return
 
-		_iePlaceholder()
+		iePlaceholder()
 
 		return valid
 
-	_formHideError = ->
+	formHideError = ->
 		$(this).removeClass 'error'
 		$('.tooltip[data-name = "' + $(this).attr('name') + '"]').remove()
 
-	_formClear = ->
+	formClear = ->
 		$form = $('form')
 
 		$form.find('.message').remove()
@@ -213,7 +213,7 @@ forms = do ->
 
 		$('.tooltip').remove()
 		customSelect.clean()
-		_iePlaceholder()
+		iePlaceholder()
 
 	{init: init}
 

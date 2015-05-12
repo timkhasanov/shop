@@ -3,17 +3,17 @@
   var app;
 
   app = (function() {
-    var _backToTopPosition, _scrollToTop, _setUpListeners, init;
+    var backToTopPosition, init, scrollToTop, setUpListeners;
     init = function() {
-      return _setUpListeners();
+      return setUpListeners();
     };
-    _setUpListeners = function() {
+    setUpListeners = function() {
       $(window).on('load resize', function() {
-        return _backToTopPosition();
+        return backToTopPosition();
       });
-      return $('.to-top-btn').on('click', _scrollToTop);
+      return $('.to-top-btn').on('click', scrollToTop);
     };
-    _backToTopPosition = function() {
+    backToTopPosition = function() {
       var $toTop, divider, maxPos;
       $toTop = $('.to-top-btn');
       maxPos = $(document).height() - $('.footer').outerHeight();
@@ -33,7 +33,7 @@
         }
       });
     };
-    _scrollToTop = function(e) {
+    scrollToTop = function(e) {
       if (e.preventDefault) {
         e.preventDefault();
       } else {

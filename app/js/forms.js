@@ -3,28 +3,29 @@
   var customSelect, forms;
 
   customSelect = (function() {
-    var _changeSelectOption, _setUpListeners, _showCustomSelect, cleanCustomSelect, hideCustomSelect, init, validateCustomSelect;
+    var changeSelectOption, cleanCustomSelect, hideCustomSelect, init, setUpListeners, showCustomSelect, validateCustomSelect;
     init = function() {
-      return _setUpListeners();
+      return setUpListeners();
     };
-    _setUpListeners = function() {
-      $('.custom-select').on('click touchstart', _showCustomSelect);
-      $('.custom-select__list-item').on('click touchstart', _changeSelectOption);
+    setUpListeners = function() {
+      $('.custom-select').on('click touchstart', showCustomSelect);
+      $('.custom-select__list-item').on('click touchstart', changeSelectOption);
       return $(document).on('click touchstart', hideCustomSelect);
     };
-    _showCustomSelect = function() {
+    showCustomSelect = function() {
       var $select, $selectList;
       $select = $(this);
       $selectList = $select.find('.custom-select__list');
       if ($select.hasClass('custom-select_active')) {
         $select.removeClass('custom-select_active');
-        return $selectList.not(':animated').slideUp();
+        $selectList.not(':animated').slideUp();
       } else {
         $select.addClass('custom-select_active');
-        return $selectList.not(':animated').slideDown();
+        $selectList.not(':animated').slideDown();
       }
+      return false;
     };
-    _changeSelectOption = function() {
+    changeSelectOption = function() {
       var $item, $itemHidden, $itemParent, itemVal;
       $item = $(this);
       itemVal = $item.attr('data-value');
@@ -35,10 +36,8 @@
       return $itemHidden.val(itemVal);
     };
     hideCustomSelect = function() {
-      if ($('.custom-select').hasClass('custom-select_active')) {
-        $('.custom-select').removeClass('custom-select_active');
-        return $('.custom-select__list').not(':animated').slideUp();
-      }
+      $('.custom-select').removeClass('custom-select_active');
+      return $('.custom-select__list').not(':animated').slideUp();
     };
     validateCustomSelect = function() {
       var $itemHidden, valid;
@@ -99,19 +98,19 @@
   });
 
   forms = (function() {
-    var _formClear, _formHideError, _formSubmit, _formValidation, _iePlaceholder, _setUpListeners, init;
+    var formClear, formHideError, formSubmit, formValidation, iePlaceholder, init, setUpListeners;
     init = function() {
-      _setUpListeners();
-      return _iePlaceholder();
+      setUpListeners();
+      return iePlaceholder();
     };
-    _setUpListeners = function() {
+    setUpListeners = function() {
       var $form;
       $form = $('form');
-      $form.on('reset', _formClear);
-      $form.on('submit', _formSubmit);
-      return $form.on('keydown', '.required', _formHideError);
+      $form.on('reset', formClear);
+      $form.on('submit', formSubmit);
+      return $form.on('keydown', '.required', formHideError);
     };
-    _iePlaceholder = function() {
+    iePlaceholder = function() {
       if (!('placeholder' in document.createElement('input'))) {
         $('[placeholder]').on('focus', function() {
           var $input;
@@ -139,7 +138,7 @@
         return $('[placeholder]').trigger('blur');
       }), 100);
     };
-    _formSubmit = function(e) {
+    formSubmit = function(e) {
       var $form, $formTitle, $rstBtn, $sbtBtn, customValidated, formAction, formValidated;
       if (e.preventDefault) {
         e.preventDefault();
@@ -151,7 +150,7 @@
       formAction = $form.attr('action');
       $sbtBtn = $form.find('input[type="submit"]');
       $rstBtn = $form.find('input[type="reset"]');
-      formValidated = _formValidation($form);
+      formValidated = formValidation($form);
       customValidated = customSelect.validate();
       customSelect.hide();
       $form.find('.message').remove();
@@ -164,7 +163,7 @@
         }).done(function(data) {
           data = JSON.parse(data);
           if (data.status === 'OK') {
-            _formClear();
+            formClear();
             return $formTitle.after('<div class="message message_success">' + data.msg + '</div>');
           } else {
             return $formTitle.after('<div class="message message_error">' + data.msg + '</div>');
@@ -174,7 +173,7 @@
         });
       }
     };
-    _formValidation = function($form) {
+    formValidation = function($form) {
       var $controlList, valid;
       $controlList = $form.find('.required');
       valid = true;
@@ -201,14 +200,14 @@
           valid = false;
         }
       });
-      _iePlaceholder();
+      iePlaceholder();
       return valid;
     };
-    _formHideError = function() {
+    formHideError = function() {
       $(this).removeClass('error');
       return $('.tooltip[data-name = "' + $(this).attr('name') + '"]').remove();
     };
-    _formClear = function() {
+    formClear = function() {
       var $form;
       $form = $('form');
       $form.find('.message').remove();
@@ -216,7 +215,7 @@
       $form.find('.btn-container input').removeAttr('disabled');
       $('.tooltip').remove();
       customSelect.clean();
-      return _iePlaceholder();
+      return iePlaceholder();
     };
     return {
       init: init
