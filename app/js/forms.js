@@ -16,13 +16,9 @@
       var $select, $selectList;
       $select = $(this);
       $selectList = $select.find('.custom-select__list');
-      if ($select.hasClass('custom-select_active')) {
-        $select.removeClass('custom-select_active');
-        $selectList.not(':animated').slideUp();
-      } else {
-        $select.addClass('custom-select_active');
-        $selectList.not(':animated').slideDown();
-      }
+      hideCustomSelect();
+      $select.addClass('custom-select_active');
+      $selectList.not(':animated').slideDown();
       return false;
     };
     changeSelectOption = function() {
