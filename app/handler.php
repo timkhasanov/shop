@@ -59,7 +59,7 @@ $mail->AddAttachment('tmp_zal/'.$nazwa_g, $nazwa_g);
 require_once 'phar://php/vendor/yandex-php-library_0.4.1.phar/vendor/autoload.php';
 use Yandex\Disk\DiskClient;
 
-$diskClient = new DiskClient('122f8d7291a94855a1517516171d5ee3');
+$diskClient = new DiskClient('');
 $diskClient->setServiceScheme(DiskClient::HTTPS_SCHEME);
 $fileName = $nazwa_g;
 $newName = $nazwa_g;
