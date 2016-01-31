@@ -35,7 +35,7 @@ $mail->SMTPAuth   = true;                  // enable SMTP authentication
 $mail->Port       = 465;                    // set the SMTP port for the GMAIL server
 $mail->SMTPSecure = 'ssl';                 //Secure SMTP
 $mail->Username   = "jz828059"; // SMTP account username (Логин от почты SMTP)
-$mail->Password   = "t,fyfirf";        // SMTP account password (Пароль от почты SMTP)
+$mail->Password   = "";        // SMTP account password (Пароль от почты SMTP)
 $mail->SetFrom('jz828059@yandex.ru', 'mailrobot');
 $mail->AddReplyTo('jz828059@yandex.ru','mailrobot');
 $mail->Subject    = "заказ перевода онлайн";
